@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Скачать видео/аудио с YouTube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Скачать видео/аудио с YouTube</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        <form method="post">
+            <input type="text" name="url" placeholder="Вставьте ссылку на видео" required>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="format" value="video" checked> Видео
+                </label>
+                <label>
+                    <input type="radio" name="format" value="audio"> Аудио (mp3)
+                </label>
+            </div>
+            <div class="select-group">
+                <label for="quality">Качество видео:</label>
+                <select name="quality" id="quality">
+                    <option value="best">Максимальное</option>
+                    <option value="2160">2160p (4K)</option>
+                    <option value="1440">1440p</option>
+                    <option value="1080">1080p</option>
+                    <option value="720">720p</option>
+                    <option value="480">480p</option>
+                    <option value="360">360p</option>
+                </select>
+            </div>
+            <button type="submit">Скачать</button>
+        </form>
+        <p class="note">Видео скачивается в mp4, аудио — в mp3.<br>Качество по умолчанию — максимальное.</p>
+    </div>
+</body>
+</html>

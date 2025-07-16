@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+}
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.radio-group, .select-group {
+    margin-bottom: 15px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0056b3;
+}
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.flashes .error {
+    color: #b30000;
+}
+.note {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    margin-top: 15px;
+}
